@@ -20,7 +20,15 @@ export default function App() {
             headerTitleAlign: "center",
           }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            title: "About",
+            headerStyle: { backgroundColor: "#ff7f00" },
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
