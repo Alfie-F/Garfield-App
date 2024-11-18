@@ -1,22 +1,20 @@
 import * as React from "react";
 import { Button, Image, StyleSheet, View, Text } from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <Button
-          title="Go to about"
-          onPress={() => navigation.navigate("Profile")}
-          color={"orange"}
-        />
-        <Image
-          style={styles.Image}
-          source={require("../assets/Garf.png")}
-        ></Image>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
+      <Button
+        title="Go to about"
+        onPress={() => navigation.navigate("Profile")}
+        color={"orange"}
+      />
+      <Image
+        style={styles.Image}
+        source={require("../assets/Garf.png")}
+      ></Image>
+    </SafeAreaView>
   );
 }
 
@@ -31,7 +29,6 @@ const styles = StyleSheet.create({
   Image: {
     width: 330,
     height: 197.1,
-    // marginTop: 120,
     position: "absolute",
     bottom: 5,
   },

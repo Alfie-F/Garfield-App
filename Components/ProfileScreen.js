@@ -1,18 +1,18 @@
 import * as React from "react";
 import { Button, StyleSheet, View, Text } from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ProfileScreen(navigation, route) {
   console.log(navigation);
+
+  console.log(navigation.route);
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <Text>
-          This is an app that tells you if it's monday what could you possibly
-          need an about section for?
-        </Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
+      <Text>
+        This is an app that tells you if it's monday what could you possibly
+        need an about section for?
+      </Text>
+    </SafeAreaView>
   );
 }
 
