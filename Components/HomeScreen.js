@@ -9,6 +9,7 @@ export default function HomeScreen({ navigation }) {
         <Button
           title="Go to about"
           onPress={() => navigation.navigate("Profile")}
+          color={"orange"}
         />
         <Image
           style={styles.Image}
@@ -28,8 +29,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   Image: {
-    width: 220,
-    height: 131.4,
+    width: 330,
+    height: 197.1,
+    // marginTop: 120,
+    position: "absolute",
+    bottom: 5,
   },
   //   button: {
   //     height: "200px",
