@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Image, StyleSheet, View, Text } from "react-native";
+import { Button, Image, StyleSheet, View, Text, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen({ navigation }) {
@@ -10,6 +10,12 @@ export default function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate("Profile")}
         color={"orange"}
       />
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate("TabNav")}
+      >
+        <Text style={styles.text}>TabNav</Text>
+      </Pressable>
       <Image
         style={styles.Image}
         source={require("../assets/Garf.png")}
@@ -32,9 +38,21 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 5,
   },
-  //   button: {
-  //     height: "200px",
-  //     rowGap: 200,
-  //     paddingBottom: 400,
-  //   },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "orange",
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "white",
+  },
 });
