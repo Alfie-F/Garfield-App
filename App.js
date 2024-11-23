@@ -35,7 +35,7 @@ export default function App() {
           name="TabNav"
           component={TabNav}
           options={{
-            title: "Tabby stuff",
+            title: "Tab Nav Widgets",
             headerStyle: { backgroundColor: "#ff7f00" },
             headerTitleAlign: "center",
           }}

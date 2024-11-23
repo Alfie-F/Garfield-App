@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Button, StyleSheet, View, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ScreenX from "./ScreenX";
@@ -21,8 +20,11 @@ export default function TabNav(navigation) {
         component={ScreenX}
         options={{
           title: "ScreenX",
-          headerStyle: { backgroundColor: "#edab7d", elevation: 0 },
-          headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: "#edab7d",
+            elevation: 0,
+          },
+          headerShown: false,
           tabBarStyle: {
             backgroundColor: "#000",
             elevation: 1,
@@ -37,9 +39,11 @@ export default function TabNav(navigation) {
         name="ScreenY"
         component={ScreenY}
         options={{
-          title: "ScreenY",
-          headerStyle: { backgroundColor: "#edab7d", elevation: 0 },
-          headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: "#edab7d",
+            elevation: 0,
+          },
+          headerShown: false,
           tabBarStyle: {
             backgroundColor: "#000",
             elevation: 1,
@@ -58,12 +62,6 @@ export default function TabNav(navigation) {
   );
 }
 
-{
-  /* <SafeAreaView style={styles.container}>
-        <Text>Testing TabNav within StackNav</Text>
-      </SafeAreaView> */
-}
-
 const styles = StyleSheet.create({
   container: {
     height: "100%",
@@ -73,5 +71,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingLeft: "20%",
     paddingRight: "20%",
+    borderColor: "#edab7d",
   },
 });
