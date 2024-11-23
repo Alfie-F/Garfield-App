@@ -2,36 +2,56 @@ import * as React from "react";
 import { Button, StyleSheet, View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "./HomeScreen";
-import ProfileScreen from "./ProfileScreen";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import ScreenX from "./ScreenX";
+import ScreenY from "./ScreenY";
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNav(navigation) {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: "orange",
+        tabBarInactiveTintColor: "white",
+      }}
+    >
       <Tab.Screen
-        name="Home"
-        component={x}
+        name="ScreenX"
+        component={ScreenX}
         options={{
-          title: "Does Garfield like today?",
-          headerStyle: { backgroundColor: "#ff7f00" },
+          title: "ScreenX",
+          headerStyle: { backgroundColor: "#edab7d", elevation: 0 },
           headerTitleAlign: "center",
-          //   tabBarIcon: ({ size, color }) => (
-          //     <MaterialCommunityIcons name="home" size={size} color={color} />
-          //   ),
+          tabBarStyle: {
+            backgroundColor: "#000",
+            elevation: 1,
+            height: "8%",
+          },
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={y}
+        name="ScreenY"
+        component={ScreenY}
         options={{
-          title: "Does Garfield like today?",
-          headerStyle: { backgroundColor: "#ff7f00" },
+          title: "ScreenY",
+          headerStyle: { backgroundColor: "#edab7d", elevation: 0 },
           headerTitleAlign: "center",
-          //   tabBarIcon: ({ size, color }) => (
-          //     <MaterialCommunityIcons name="profile" size={size} color={color} />
-          //   ),
+          tabBarStyle: {
+            backgroundColor: "#000",
+            elevation: 1,
+            height: "8%",
+          },
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons
+              name="cards-spade"
+              size={size}
+              color={color}
+            />
+          ),
         }}
       />
     </Tab.Navigator>
