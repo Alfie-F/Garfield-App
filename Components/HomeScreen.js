@@ -12,21 +12,31 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const windowWidth = Dimensions.get("screen").width;
 const windowHeight = Dimensions.get("screen").height;
 
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const date = new Date();
+let day = days[date.getDay()];
+let check = "does";
+let words = "Huzzah what wonderful news!";
+if (day === "Monday") {
+  check = "does not";
+  words = "better luck tomorrow.";
+}
 export default function HomeScreen({ navigation }) {
-  console.log(windowHeight, windowWidth);
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.maintext}>
-        <Text style={styles.maintext}>
-          Day of week will go here! "Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </Text>
-      </View>
+      <Text style={styles.maintext}>
+        {" "}
+        Today it is {day}! This means that our dear old Garf {check} like today!{" "}
+        {words}
+      </Text>
       <Pressable
         style={styles.button}
         onPress={() => navigation.navigate("Profile")}
@@ -59,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   Image: {
-    position: "absolute",
+    // position: "absolute",
     width: windowWidth,
     aspectRatio: 1.68 / 1,
     resizeMode: "contain",
@@ -84,14 +94,17 @@ const styles = StyleSheet.create({
     color: "black",
   },
   maintext: {
-    fontSize: 16,
-    lineHeight: 21,
+    fontSize: 30,
+    lineHeight: 31,
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "black",
     width: "100%",
-    marginHorizontal: "5%",
-    alignItems: "center",
-    justifyContent: "center",
+    textAlign: "center",
+    paddingHorizontal: "20%",
+    paddingTop: 20,
+    flexGrow: 1,
+    minWidth: 0,
+    height: "auto",
   },
 });
