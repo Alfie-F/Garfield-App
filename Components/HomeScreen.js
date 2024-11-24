@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexDirection: "column",
     justifyContent: "space-between",
+    // space between made this fit to page in the end
   },
   Image: {
     height: "auto",
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     position: "relative",
     margin: 20,
     height: 50,
-    width: "35%",
+    width: "30%",
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "orange",
@@ -110,5 +111,6 @@ const styles = StyleSheet.create({
   },
   div: {
     flexDirection: "row",
+    justifyContent: "center",
   },
 });
