@@ -5,14 +5,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function ScreenY(navigation, route) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>
+      <Text style={styles.text}>
         Non nostrum illo cum reiciendis dolore eos quia fugit eos earum
         similique nam sunt fuga. Est minus galisum ut omnis laboriosam est eius
         mollitia sed blanditiis ullam et earum corrupti nam voluptas
         exercitationem. Rem totam aliquid et quaerat expedita nam enim
-        distinctio hic galisum illo in repellendus nemo ut dolor aspernatur. Qui
-        voluptatem perferendis non aliquid explicabo ea fugiat ducimus sit nisi
-        ipsa est obcaecati consequatur ut quidem facilis ut adipisci repellat.
+        distinctio hic galisum illo.
       </Text>
     </SafeAreaView>
   );
@@ -27,5 +25,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingLeft: "20%",
     paddingRight: "20%",
+  },
+  text: {
+    fontSize: 30,
+    lineHeight: 31,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    textAlign: "center",
+    paddingHorizontal: "5",
   },
 });

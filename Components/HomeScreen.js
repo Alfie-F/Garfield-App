@@ -30,6 +30,8 @@ if (day === "Monday") {
   words = "better luck tomorrow.";
 }
 export default function HomeScreen({ navigation }) {
+  console.log(windowWidth);
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.maintext}>
@@ -37,18 +39,20 @@ export default function HomeScreen({ navigation }) {
         Today it is {day}! This means that our dear old Garf {check} like today!{" "}
         {words}
       </Text>
-      <Pressable
-        style={styles.button}
-        onPress={() => navigation.navigate("Profile")}
-      >
-        <Text style={styles.text}>About</Text>
-      </Pressable>
-      <Pressable
-        style={styles.button}
-        onPress={() => navigation.navigate("TabNav")}
-      >
-        <Text style={styles.text}>Tab Nav Widgets</Text>
-      </Pressable>
+      <View style={styles.div}>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Profile")}
+        >
+          <Text style={styles.text}>About</Text>
+        </Pressable>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("TabNav")}
+        >
+          <Text style={styles.text}>Tab Nav Widgets</Text>
+        </Pressable>
+      </View>
       <Image
         style={styles.Image}
         source={require("../assets/Garf.png")}
@@ -60,20 +64,19 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     height: "100%",
-    width: { windowWidth },
-    display: "flex",
-    flexWrap: "wrap",
-    flexDirection: "row",
+    width: "100%",
     backgroundColor: "#edab7d",
     alignItems: "center",
-    justifyContent: "center",
+    display: "flex",
+    flexGrow: 1,
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
   Image: {
-    // position: "absolute",
+    height: "auto",
     width: windowWidth,
     aspectRatio: 1.68 / 1,
-    resizeMode: "contain",
-    // top: windowHeight - windowWidth * 1.68,
+    // alignSelf: "flex-end",
   },
   button: {
     alignItems: "center",
@@ -81,7 +84,7 @@ const styles = StyleSheet.create({
     position: "relative",
     margin: 20,
     height: 50,
-    width: "30%",
+    width: "35%",
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "orange",
@@ -103,8 +106,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingHorizontal: "20%",
     paddingTop: 20,
-    flexGrow: 1,
-    minWidth: 0,
     height: "auto",
+  },
+  div: {
+    flexDirection: "row",
   },
 });

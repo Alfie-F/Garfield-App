@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function ProfileScreen(navigation, route) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>
+      <Text style={styles.text}>
         This is an app that tells you if it's monday what could you possibly
         need an about section for?
       </Text>
@@ -22,5 +22,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingLeft: "20%",
     paddingRight: "20%",
+  },
+  text: {
+    fontSize: 30,
+    lineHeight: 31,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    textAlign: "center",
+    paddingHorizontal: "5",
   },
 });

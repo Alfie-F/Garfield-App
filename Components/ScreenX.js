@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function ScreenX(navigation, route) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>
+      <Text style={styles.text}>
         Lorem ipsum dolor sit amet. Quo quas recusandae quo expedita dicta et
         odio voluptas in laboriosam velit et veniam necessitatibus At
         necessitatibus repellat. Sed dolores laborum aut neque expedita ut
@@ -24,5 +24,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingLeft: "20%",
     paddingRight: "20%",
+  },
+  text: {
+    fontSize: 30,
+    lineHeight: 31,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    textAlign: "center",
+    paddingHorizontal: "5%",
   },
 });
